@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi Valentín mi Gabriela corazón de melón?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- PANTALLA 1: PREGUNTA PRINCIPAL -->
+    <div id="questionScreen" class="screen active">
+        <div class="container">
+            <!-- Flores decorativas superiores -->
+            <div class="flowers-top">💐 💑 💐</div>
+
+            <!-- Pregunta principal -->
+            <h1 class="question">¿Quieres ser mi Valentín?</h1>
+
+            <!-- Contenedor de botones -->
+            <div class="buttons-container">
+                <!-- Botón SÍ - Estático y grande -->
+                <button class="btn btn-yes" id="yesBtn">
+                    Sí 💕
+                </button>
+
+                <!-- Botón NO - Se mueve cuando se intenta hacer clic -->
+                <button class="btn btn-no" id="noBtn">
+                    No ❌
+                </button>
+            </div>
+
+            <!-- Mensaje motivacional -->
+            <div class="hint-message" id="hintMessage"></div>
+
+            <!-- Flores decorativas inferiores -->
+            <div class="flowers-bottom">💐 💑 💐</div>
+        </div>
+    </div>
+
+    <!-- PANTALLA 2: MENSAJE DE FELICITACIÓN -->
+    <div id="celebrationScreen" class="screen">
+        <div class="container celebration-container">
+            <!-- Flores grandes -->
+            <div class="celebration-flowers">💐</div>
+
+            <!-- Mensaje de felicitación -->
+            <h1 class="celebration-title">¡Felicidades!</h1>
+
+            <!-- Corazón grande -->
+            <div class="big-heart">💕</div>
+
+            <!-- Mensaje personal -->
+            <p class="celebration-message">
+                ¡Acabas de aceptar ser mi Valentín! 🎉
+            </p>
+
+            <!-- Texto decorativo con flores -->
+            <div class="decorative-text">
+                💐 Te quiero 💐 Te quiero 💐 Te quiero 💐
+            </div>
+
+            <!-- Botón para reiniciar -->
+            <button class="btn btn-restart" id="restartBtn">
+                Reiniciar ♻️
+            </button>
+
+            <!-- Confeti animado -->
+            <div class="confetti" id="confetti"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

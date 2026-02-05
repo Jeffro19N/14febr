@@ -1,0 +1,404 @@
+/* ========================================
+   ESTILOS GENERALES
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #FF69B4;
+    --color-primary-dark: #FF1493;
+    --color-primary-light: #FFB6D9;
+    --color-yes: #4CAF50;
+    --color-no: #f44336;
+    --color-text: #fff;
+    --transition: all 0.3s ease;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+}
+
+/* ========================================
+   PANTALLAS
+   ======================================== */
+
+.screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.screen.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Pantalla de pregunta */
+#questionScreen {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+}
+
+/* Pantalla de celebración */
+#celebrationScreen {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+}
+
+/* ========================================
+   CONTENEDORES
+   ======================================== */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    animation: slideIn 0.6s ease-out;
+}
+
+.celebration-container {
+    justify-content: center;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   FLORES DECORATIVAS
+   ======================================== */
+
+.flowers-top, .flowers-bottom {
+    font-size: 60px;
+    margin-bottom: 30px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.flowers-bottom {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.celebration-flowers {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.1);
+    }
+}
+
+/* ========================================
+   TEXTOS Y TÍTULOS
+   ======================================== */
+
+.question {
+    font-size: clamp(32px, 8vw, 56px);
+    font-weight: bold;
+    color: var(--color-text);
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.celebration-title {
+    font-size: clamp(48px, 12vw, 72px);
+    font-weight: bold;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.celebration-message {
+    font-size: clamp(18px, 4vw, 28px);
+    color: var(--color-text);
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.decorative-text {
+    font-size: clamp(16px, 3vw, 24px);
+    color: var(--color-text);
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.hint-message {
+    font-size: clamp(16px, 3vw, 22px);
+    color: var(--color-text);
+    font-style: italic;
+    margin-top: 20px;
+    font-weight: 600;
+    min-height: 30px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   CORAZÓN GRANDE
+   ======================================== */
+
+.big-heart {
+    font-size: clamp(80px, 20vw, 120px);
+    margin: 20px 0;
+    animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+/* ========================================
+   BOTONES
+   ======================================== */
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 300px;
+    margin: 40px 0;
+    position: relative;
+    align-items: center;
+}
+
+.btn {
+    padding: 16px 40px;
+    font-size: clamp(16px, 4vw, 22px);
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    color: var(--color-text);
+    outline: none;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 220px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Botón Sí - Verde y estático */
+.btn-yes {
+    background-color: var(--color-yes);
+}
+
+.btn-yes:hover {
+    background-color: #45a049;
+}
+
+/* Botón No - Rojo y con movimiento */
+.btn-no {
+    background-color: var(--color-no);
+    position: fixed;
+    transition: none;
+}
+
+.btn-no:hover {
+    background-color: #da190b;
+}
+
+/* Botón Reiniciar */
+.btn-restart {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid var(--color-text);
+    margin-top: 20px;
+    max-width: 250px;
+}
+
+.btn-restart:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ========================================
+   CONFETI
+   ======================================== */
+
+.confetti {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff1493;
+    animation: confetti-fall 3s ease-in forwards;
+}
+
+@keyframes confetti-fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+/* Tablets - 768px */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .buttons-container {
+        max-width: 280px;
+    }
+
+    .btn {
+        padding: 14px 35px;
+    }
+}
+
+/* Móviles pequeños - 480px */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .flowers-top, .flowers-bottom {
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+
+    .question {
+        margin-bottom: 20px;
+    }
+
+    .buttons-container {
+        max-width: 100%;
+        gap: 15px;
+        margin: 30px 0;
+        min-height: 120px;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+
+    .btn-no {
+        max-width: 150px;
+    }
+
+    .decorative-text {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Orientación horizontal (landscape) */
+@media (max-height: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .flowers-top, .flowers-bottom {
+        display: none;
+    }
+
+    .question {
+        margin-bottom: 15px;
+    }
+
+    .buttons-container {
+        margin: 20px 0;
+    }
+
+    .celebration-title {
+        font-size: 36px;
+    }
+
+    .big-heart {
+        font-size: 60px;
+    }
+}
